@@ -1,0 +1,18 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">@Model.FirstName @Model.LastName</li>
+    <li class="list-group-item">@Model.Address</li>
+    <li class="list-group-item">@Model.Salary</li>
+    <li class="list-group-item">@Model.Ssn</li> 
+  </ul>
+</div>
+@* 
+@section SidebarTitle{
+    @Model.FirstName @Model.LastName
+} *@

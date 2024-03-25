@@ -1,0 +1,55 @@
+﻿@model List<Employee>
+@{
+    //Layout = "_CompanyLayout";
+    ViewData["Title"] = "Index";
+    int i = 1; 
+}
+
+
+<h1>Index</h1>
+
+  <button><a href="~/employee/getaddform">Add</a></button>
+@foreach(Department department in ViewBag.departments){
+    <p>@department.Name</p>
+}
+ 
+<table class="table">
+   <thead class="thead-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Social Socurity Number</th>
+            <th scope="col">Sex Type</th>
+            <th scope="col">Department</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+     
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row">@(i++)</th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Address</td>
+                <td>@item.Salary</td>
+                <td>@item.Ssn</td>
+                <td>@item.Sex</td>
+                <td>@item.department.Name</td>
+                <td><a href="http://localhost:5245/employee/Details/@item.Ssn"><i class="fa-solid fa-info"></i></a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+@* 
+@section SidebarTitle{
+    Students
+} *@
